@@ -1,0 +1,30 @@
+<div class="container">
+<h1>Signup!</h1>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-danger">
+    <%= msg %>
+  </div>
+<% end %>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  <%= f.label :first_name, "First Name" %>
+  <%= f.text_field :first_name, class: 'form-control', required: true %>
+
+  <%= f.label :last_name, "Last Name" %>
+  <%= f.text_field :last_name, class: 'form-control', required: true %>
+
+  <%= f.label :email, "Email" %>
+  <%= f.email_field :email, class: 'form-control', required: true %>
+
+  <%= f.label :password, "Password" %>
+  <%= f.password_field :password, class: 'form-control', required: true %>
+
+  <%= f.label :password_confirmation, "Password Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
+
+  <%= submit_tag "Login", class: 'btn btn-lg btn-primary btn-block' %>
+
+<% end %>
+</div>
